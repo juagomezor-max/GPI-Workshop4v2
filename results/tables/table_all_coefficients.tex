@@ -1,0 +1,40 @@
+
+\begin{longtable}{llrrrl}
+\toprule
+Model & Term & Estimate & Std\_Error & t\_statistic & Significant\\
+\midrule
+y \textasciitilde{} x & (Intercept) & 5.676475 & 5.864747 & 0.9679 & ns\\
+y \textasciitilde{} x & x & 1.882148 & 0.116428 & 16.1658 & ***\\
+y \textasciitilde{} x * grupo & (Intercept) & 3.924438 & 10.572914 & 0.3712 & ns\\
+y \textasciitilde{} x * grupo & x & 1.951115 & 0.207221 & 9.4156 & ***\\
+y \textasciitilde{} x * grupo & as.factor(grupo)B & -8.442436 & 14.656071 & -0.5760 & ns\\
+\addlinespace
+y \textasciitilde{} x * grupo & as.factor(grupo)C & 15.367161 & 14.347331 & 1.0711 & ns\\
+y \textasciitilde{} x * grupo & x:as.factor(grupo)B & 0.147523 & 0.287560 & 0.5130 & ns\\
+y \textasciitilde{} x * grupo & x:as.factor(grupo)C & -0.400699 & 0.286146 & -1.4003 & ns\\
+y \textasciitilde{} x + grupo & (Intercept) & 8.388794 & 6.137959 & 1.3667 & ns\\
+y \textasciitilde{} x + grupo & x & 1.862359 & 0.116765 & 15.9496 & ***\\
+\addlinespace
+y \textasciitilde{} x + grupo & as.factor(grupo)B & -1.063670 & 2.521888 & -0.4218 & ns\\
+y \textasciitilde{} x + grupo & as.factor(grupo)C & -4.166080 & 2.542013 & -1.6389 & ns\\
+z \textasciitilde{} x & (Intercept) & 111.876612 & 8.348103 & 13.4014 & ***\\
+z \textasciitilde{} x & x & -0.187228 & 0.165727 & -1.1297 & ns\\
+z \textasciitilde{} x * y & (Intercept) & 110.474327 & 33.256392 & 3.3219 & **\\
+\addlinespace
+z \textasciitilde{} x * y & x & -0.194808 & 0.712578 & -0.2734 & ns\\
+z \textasciitilde{} x * y & y & 0.032408 & 0.363980 & 0.0890 & ns\\
+z \textasciitilde{} x * y & x:y & -0.000283 & 0.007008 & -0.0404 & ns\\
+z \textasciitilde{} x + y & (Intercept) & 111.772707 & 8.388346 & 13.3248 & ***\\
+z \textasciitilde{} x + y & x & -0.221679 & 0.253040 & -0.8761 & ns\\
+\addlinespace
+z \textasciitilde{} x + y & y & 0.018304 & 0.101407 & 0.1805 & ns\\
+z \textasciitilde{} x + y + grupo & (Intercept) & 105.760456 & 8.744456 & 12.0946 & ***\\
+z \textasciitilde{} x + y + grupo & x & -0.237549 & 0.250974 & -0.9465 & ns\\
+z \textasciitilde{} x + y + grupo & y & 0.046005 & 0.101279 & 0.4542 & ns\\
+z \textasciitilde{} x + y + grupo & as.factor(grupo)B & 3.803100 & 3.577438 & 1.0631 & ns\\
+\addlinespace
+z \textasciitilde{} x + y + grupo & as.factor(grupo)C & 8.432524 & 3.628962 & 2.3237 & *\\
+z \textasciitilde{} y & (Intercept) & 107.415115 & 6.750518 & 15.9121 & ***\\
+z \textasciitilde{} y & y & -0.048705 & 0.066540 & -0.7320 & ns\\
+\bottomrule
+\end{longtable}

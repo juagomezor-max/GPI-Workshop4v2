@@ -6,7 +6,8 @@ pkgs <- c(
   "here",
   "dplyr",
   "readr",
-  "ggplot2"
+  "ggplot2",
+  "car"
 )
 
 # Check if packages are installed and install them if they are not
