@@ -1,0 +1,54 @@
+% Analysis Results - LaTeX Document
+% Generated automatically by 03_analisis.R
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf-8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{amsmath}
+
+\title{Statistical Analysis Report}
+\author{GPI Workshop 4}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Descriptive Statistics}
+
+This section presents comprehensive descriptive statistics for all continuous variables in the dataset.
+
+\input{table_descriptive_statistics.tex}
+
+\section{Correlation Analysis}
+
+The following table shows the Pearson correlation coefficients between variables.
+
+\input{table_correlation_matrix.tex}
+
+\section{Group Analysis}
+
+Means and standard deviations by group are presented in the following table.
+
+\input{table_group_statistics.tex}
+
+\section{Regression Analysis}
+
+\subsection{Model 1: y ~ x}
+
+\input{table_regression_model1.tex}
+
+\subsection{Model 2: z ~ x + y}
+
+\input{table_regression_model2.tex}
+
+\section{ANOVA Results}
+
+\input{table_anova_results.tex}
+
+\end{document}
