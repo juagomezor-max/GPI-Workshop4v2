@@ -1,17 +1,26 @@
-@"
-# R
+# ---- R / RStudio ----
 .Rhistory
 .RData
+.Ruserdata
 .Rproj.user/
+*.Rproj
+
+# ---- renv (sí commit renv.lock, NO la librería local) ----
 renv/library/
+renv/staging/
+renv/python/
+renv/local/
+renv.lock.bak
 
-# Windows
-desktop.ini
+# ---- Output (opcional: yo recomiendo versionar figuras/tablas si el profe las quiere ver) ----
+# results/figures/
+# results/tables/
+
+# ---- OS ----
+.DS_Store
 Thumbs.db
+desktop.ini
 
-# Logs
+# ---- Logs / temp ----
 *.log
-
-# Outputs regenerables
-results/
-"@ | Set-Content .gitignore
+*.tmp
