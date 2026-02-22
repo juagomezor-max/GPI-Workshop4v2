@@ -1,29 +1,17 @@
-# This script is responsible for installing (not attaching) useful packages.
-# Avoids conflicts by keeping packages available via pkg::function.
-# Usage: this is just for reference, all packages shall be charged in renv.lock,
-# so you do not need to run this script directly.
-
-packages <- c(
-	"broom",
-	"dplyr",
-	"forcats",
-	"fs",
-	"ggplot2",
-	"glue",
-	"here",
-	"janitor",
-	"lubridate",
-	"purrr",
-	"readr",
-	"readxl",
-	"stringr",
-	"tibble",
-	"tidyr"
+# --- IGNORE ---
+# This script is used to load the necessary packages for the project. It checks if the packages are installed and installs them if they are not. Then it loads the packages into the R session.
+# scripts/packages.R
+# This script is sourced in the .Rprofile file, so it runs every time you start an R session in this project.
+pkgs <- c(
+  "here",
+  "dplyr",
+  "readr",
+  "ggplot2"
 )
 
-to_install <- setdiff(packages, rownames(installed.packages()))
-if (length(to_install) > 0) {
-	install.packages(to_install)
-}
+# Check if packages are installed and install them if they are not
+to_install <- pkgs[!pkgs %in% rownames(installed.packages())]
+if (length(to_install) > 0) install.packages(to_install)
 
-invisible(lapply(packages, requireNamespace, quietly = TRUE))
+# Load the packages
+invisible(lapply(pkgs, library, character.only = TRUE))
