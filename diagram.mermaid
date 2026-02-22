@@ -1,51 +1,41 @@
-flowchart TD
-    Start([🚀 Inicio del Proyecto]) --> Packages[📦 packages.R<br/>Instalación de dependencias]
-    
-    Packages --> Sim[🎲 01_simulacion.R<br/>Generación de datos sintéticos]
-    
-    Sim --> RawData[(📄 datos_raw.csv)]
-    
-    RawData --> Process[🔧 02_procesamiento.R<br/>Limpieza y transformación]
-    
-    Process --> ProcessedData[(📊 datos_processed.csv)]
-    
-    ProcessedData --> Analysis[📈 03_analisis.R<br/>Análisis estadístico detallado]
-    ProcessedData --> Plots[📉 04_plots.R<br/>Visualizaciones]
-    ProcessedData --> Model[🤖 05_modelado.R<br/>Modelos de regresión]
-    ProcessedData --> Stats[📊 06.estadisticas.R<br/>Estadísticas adicionales]
-    
-    Analysis --> Tables1[📋 Tablas CSV<br/>summary_statistics_detailed<br/>correlation_matrix<br/>anova_results]
-    Analysis --> Latex1[📝 Tablas LaTeX<br/>table_descriptive_statistics.tex<br/>table_correlation_matrix.tex<br/>Analysis_Report.tex]
-    
-    Plots --> Figures[🎨 Gráficos PNG<br/>histogram_z.png<br/>scatter_x_y.png]
-    
-    Model --> Tables2[📋 Tablas CSV<br/>model_comparison.csv<br/>all_model_coefficients.csv<br/>model_diagnostics.csv]
-    Model --> Latex2[📝 Tablas LaTeX<br/>table_model_comparison.tex<br/>Regression_Models_Report.tex]
-    
-    Stats --> Output1[📊 Estadísticas procesadas]
-    
-    Tables1 --> Results[📁 results/tables/]
+flowchart TB
+    Start(["🚀 Inicio del Proyecto"]) --> Packages["📦 packages.R<br>Instalación de dependencias (Uso de RENV)"]
+    Packages --> Sim["🎲 01_simulacion.R<br>Generación de datos sintéticos"]
+    Sim --> RawData[("📄 datos_raw.csv")]
+    RawData --> Process["🔧 02_procesamiento.R<br>Limpieza y transformación"]
+    Process --> ProcessedData[("📊 datos_processed.csv")]
+    ProcessedData --> Analysis["📈 03_analisis.R<br>Análisis estadístico detallado"] & Plots["📉 04_plots.R<br>Visualizaciones"] & Model["🤖 05_modelado.R<br>Modelos de regresión"] & Stats["📊 06.estadisticas.R<br>Estadísticas adicionales"]
+    Analysis --> Tables1["📋 Tablas CSV<br>summary_statistics_detailed<br>correlation_matrix<br>anova_results"] & Latex1["📝 Tablas LaTeX<br>table_descriptive_statistics.tex<br>table_correlation_matrix.tex<br>Analysis_Report.tex"]
+    Plots --> Figures["🎨 Gráficos PNG<br>histogram_z.png<br>scatter_x_y.png"]
+    Model --> Tables2["📋 Tablas CSV<br>model_comparison.csv<br>all_model_coefficients.csv<br>model_diagnostics.csv"] & Latex2["📝 Tablas LaTeX<br>table_model_comparison.tex<br>Regression_Models_Report.tex"]
+    Stats --> Output1["📊 Estadísticas procesadas"]
+    Tables1 --> Results["📁 results/tables/"]
     Latex1 --> Results
     Tables2 --> Results
     Latex2 --> Results
-    Figures --> Figures_Dir[📁 results/figures/]
+    Figures --> Figures_Dir["📁 results/figures/"]
     Output1 --> Results
-    
-    Results --> End([✅ Proyecto Completado])
+    Results --> End(["✅ Proyecto Completado"])
     Figures_Dir --> End
-    
-    %% Utilities
-    Utils[🛠️ src/Utilidades.R<br/>Funciones auxiliares] -.-> Process
-    Utils -.-> Analysis
-    Utils -.-> Stats
-    
-    %% Styling
+
+     Packages:::scriptClass
+     Sim:::scriptClass
+     RawData:::dataClass
+     Process:::scriptClass
+     ProcessedData:::dataClass
+     Analysis:::scriptClass
+     Plots:::scriptClass
+     Model:::scriptClass
+     Stats:::scriptClass
+     Tables1:::outputClass
+     Latex1:::outputClass
+     Figures:::outputClass
+     Tables2:::outputClass
+     Latex2:::outputClass
+     Output1:::outputClass
+     Results:::outputClass
+     Figures_Dir:::outputClass
     classDef scriptClass fill:#6A44C7,stroke:#333,stroke-width:2px,color:#fff
     classDef dataClass fill:#00A86B,stroke:#333,stroke-width:2px,color:#fff
     classDef outputClass fill:#FF8C00,stroke:#333,stroke-width:2px,color:#fff
     classDef utilClass fill:#4682B4,stroke:#333,stroke-width:2px,color:#fff
-    
-    class Packages,Sim,Process,Analysis,Plots,Model,Stats scriptClass
-    class RawData,ProcessedData dataClass
-    class Tables1,Latex1,Figures,Tables2,Latex2,Output1,Results,Figures_Dir outputClass
-    class Utils utilClass
