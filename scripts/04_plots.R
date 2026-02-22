@@ -40,8 +40,8 @@ hist(datos$z,
      main = "Distribution of Variable 'z'", 
      xlab = "z", 
      ylab = "Frequency",
-     col = "steelblue",
-     border = "white")
+     col = "darkorange",
+     border = "#333333")
 dev.off()
 cat("✓ Histogram saved: results/figures/histogram_z.png\n")
 
@@ -56,10 +56,10 @@ plot(datos$x, datos$y,
      xlab = "x", 
      ylab = "y",
      pch = 16,
-     col = "darkblue",
+     col = "#6A44C7",
      cex = 0.7)
 # Add linear regression line
-abline(lm(y ~ x, data = datos), col = "red", lwd = 2)
+abline(lm(y ~ x, data = datos), col = "#00A86B", lwd = 2)
 dev.off()
 cat("✓ Scatter plot saved: results/figures/scatter_x_y.png\n")
 
