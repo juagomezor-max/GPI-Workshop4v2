@@ -1,0 +1,111 @@
+% Regression Modeling Results
+% Generated automatically by 05_modelado.R
+
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf-8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{geometry}
+\usepackage{amsmath}
+
+\geometry{margin=1in}
+
+\title{Statistical Regression Modeling Report}
+\author{GPI Workshop 4}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+\newpage
+
+\section{Introduction}
+
+This document presents a comprehensive statistical regression analysis with multiple models, 
+diagnostics, and comparisons.
+
+\section{Model Specifications and Comparison}
+
+Eight different regression models were fitted to the data:
+
+\begin{enumerate}
+  \item Simple regressions: y ~ x, z ~ x, z ~ y
+  \item Multiple regressions: z ~ x + y, y ~ x + grupo, z ~ x + y + grupo
+  \item Interaction models: z ~ x * y, y ~ x * grupo
+\end{enumerate}
+
+Table \ref{tab:model-comparison} presents the comparison metrics for all models.
+
+\begin{table}[H]
+  \centering
+  \caption{Model Comparison Metrics}
+  \label{tab:model-comparison}
+  \input{table_model_comparison.tex}
+\end{table}
+
+\section{Regression Coefficients}
+
+Table \ref{tab:coefficients} shows the detailed coefficients for all models.
+
+\begin{table}[H]
+  \centering
+  \caption{Regression Coefficients for All Models}
+  \label{tab:coefficients}
+  \input{table_all_coefficients.tex}
+\end{table}
+
+\section{Model Diagnostics}
+
+Diagnostic checks for Model 2.1 (z ~ x + y) are presented below.
+
+\subsection{Residual Analysis}
+
+Table \ref{tab:residual-stats} shows residual statistics.
+
+\begin{table}[H]
+  \centering
+  \caption{Residual Statistics}
+  \label{tab:residual-stats}
+  \input{table_residual_statistics.tex}
+\end{table}
+
+Sample of individual residual diagnostics is shown in Table \ref{tab:diagnostics}.
+
+\begin{table}[H]
+  \centering
+  \caption{Diagnostic Values (Sample of First 20 Observations)}
+  \label{tab:diagnostics}
+  \input{table_diagnostics_sample.tex}
+\end{table}
+
+\subsection{Multicollinearity Assessment}
+
+Table \ref{tab:vif} presents Variance Inflation Factors (VIF) for assessing multicollinearity.
+VIF values less than 5 indicate acceptable levels of multicollinearity.
+
+\begin{table}[H]
+  \centering
+  \caption{Variance Inflation Factors (VIF)}
+  \label{tab:vif}
+  \input{table_vif.tex}
+\end{table}
+
+\section{Key Findings}
+
+\begin{itemize}
+  \item The best fitting models are those with multiple predictors and interactions
+  \item Model comparison metrics (R², AIC, BIC) guide model selection
+  \item Diagnostic checks ensure assumptions are met
+  \item VIF values confirm acceptable multicollinearity levels
+\end{itemize}
+
+\section{Conclusions}
+
+Statistical regression modeling provides valuable insights into the relationships 
+between variables. Model diagnostics and comparisons ensure robust and reliable results.
+
+\end{document}

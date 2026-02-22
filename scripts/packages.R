@@ -7,7 +7,8 @@ pkgs <- c(
   "dplyr",
   "readr",
   "ggplot2",
-  "tidyverse"
+  "tidyverse",
+  "car"
 )
 
 # Check if packages are installed and install them if they are not
