@@ -1,0 +1,17 @@
+@"
+# R
+.Rhistory
+.RData
+.Rproj.user/
+renv/library/
+
+# Windows
+desktop.ini
+Thumbs.db
+
+# Logs
+*.log
+
+# Outputs regenerables
+results/
+"@ | Set-Content .gitignore
