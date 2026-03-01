@@ -22,6 +22,7 @@ cat("\n=== START: Data processing ===\n")
 # Load raw data - from zenodo link  
 zenodo_url <- "https://zenodo.org/records/18820302/files/datos_raw.csv?download=1"
 
+# Read the raw data from the provided URL
 datos_raw <- read.csv(zenodo_url)
 cat("✓ Raw data loaded: data/raw/datos_raw.csv\n")
 cat(sprintf("  Dimensions: %d rows × %d columns\n", nrow(datos_raw), ncol(datos_raw)))
